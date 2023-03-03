@@ -8,8 +8,14 @@ additionalArguments:
 
 # Lets Encrypt servers
 
-# Staging
+# Staging - the default for pebble
 # https://acme-staging-v02.api.letsencrypt.org/directory
 
-# Production Lets Encrypt
+# Production Lets Encrypt - Use the following ACME server for production
 # https://acme-v02.api.letsencrypt.org/directory
+
+# If you are using a production environment, the email must be valid, but for production it does not matter.
+#   - --certificatesresolvers.letsencrypt.acme.email=test@hello.com
+
+# `letsencrypt` in the following is the name of the certificate resolver. That can be any name and it does not matter. That is the name that must be used when creating ingressroute with TLS enabled.
+#   - --certificatesresolvers.letsencrypt.acme.tlschallenge=true
